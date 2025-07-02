@@ -12,7 +12,7 @@ function App() {
     const fetchData = async () => {
       try {
         // PASO 1: Lista básica
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20  ');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -32,8 +32,8 @@ function App() {
             return {
               id: detail.id,
               name: detail.name,
-              ki: totalPower,
-              description: `Tipo: ${types}`,
+              power: totalPower,
+              type: types,
               image: image
             };
           })
